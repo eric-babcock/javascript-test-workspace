@@ -1,0 +1,38 @@
+input {
+  width: 50px;
+  display: inline;
+}
+form {
+  display: inline;
+  margin-left: -5px;
+  width: 1000px;
+}
+
+select {
+  width: 20px;
+  padding: 1px;
+  border-radius: 0;
+}
+
+.result {
+  background-color: rgb(227, 227, 227);
+  padding: 10px 5px;
+}
+
+#convert {
+  margin-left: -5px;
+}
+
+.container {
+  display: flex;
+  margin-top: 5px;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
+.filler {
+  flex: 1;
+}
