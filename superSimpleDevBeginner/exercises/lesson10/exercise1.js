@@ -1,4 +1,20 @@
-const cartItems = [];
+const cartItems = [{
+    name:"apple",
+    price:2,
+    quantity:0,
+},{
+    name:"banana",
+    price:2,
+    quantity:0,
+},{
+    name:"egg",
+    price:2,
+    quantity:0,
+},{
+    name:"tomato",
+    price:2,
+    quantity: 0,
+}];
 
 
 //adding elements to cart

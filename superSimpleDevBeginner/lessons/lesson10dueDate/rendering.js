@@ -27,7 +27,7 @@ function render() {
 
   todos.forEach(function (todo) {
     const element = document.createElement("div");
-    element.innerText = todo.title;
+    element.innerText = todo.title + ' ' + todo.dueDate;
     const todoList = document.getElementById("todo-list");
     todoList.appendChild(element);
   });
