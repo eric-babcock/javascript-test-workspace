@@ -27,6 +27,7 @@ function render() {
 
   todos.forEach(function (todo) {
     const element = document.createElement("div");
+    element.classList.add('cart-items')
     element.innerText = todo.title + ' ' + todo.dueDate;
     const todoList = document.getElementById("todo-list");
     todoList.appendChild(element);
