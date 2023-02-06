@@ -16,9 +16,11 @@ function addItem(item) {
     //document.getElementById("counter").innerText = counter;
 
 }
+console.log("hello, world")
 
+addItem("copper")
 
-
+console.log(cartItems)
 
 
 

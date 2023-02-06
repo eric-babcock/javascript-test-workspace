@@ -14,6 +14,7 @@ const todos = [{
   }];
 
 render();
+
 function addTodo() {
   const textbox = document.getElementById("todo-title");
   const title = textbox.value;
@@ -28,13 +29,15 @@ function addTodo() {
   render();
 }
 
-function deleteTodo(event){
+function deleteTodo(event){ 
+
   const deleteButton = event.target;
   const idToDelete = deleteButton.id;
 
-
-
-};
+  todos.filter(function(todo){
+    return false;
+  });
+}
 
 function render() {
   // reset our list

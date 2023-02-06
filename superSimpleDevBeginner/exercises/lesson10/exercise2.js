@@ -30,6 +30,8 @@ function receipt (sumOutput){
 }
 receipt(cartTotal(myCart));
 
+receipt(cartTotal(myCart));
+
 function clear() {
     let receipt = document.getElementById("receipt");
     receipt.innerText = '';
@@ -46,12 +48,10 @@ function lineItem(myCart) {
         
         lineItem.innerText = cartItem.price + ' ' + cartItem.name + ' cost ' + quantity*price;
         receipt.appendChild(lineItem)
-        
-    
-    });
-
-    
+    }
+    );
 }
+
 
 
 function addTotal(myCart) {
