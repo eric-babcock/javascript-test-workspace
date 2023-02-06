@@ -1,4 +1,4 @@
-const todos = [{
+var todos = [{
   title:"Get groceries",
   dueDate: '20210-10=04',
   id:'id1'
@@ -20,13 +20,14 @@ function addTodo() {
   const title = textbox.value;
 
   const datePicker = document.getElementById('date-picker');
-  const id = new Date().getTime();
+  const id = '' + new Date().getTime();
   todos.push({
     title:title,
     dueDate:datePicker.value,
     id: id
   });
   render();
+  textbox.value = ''
 }
 
 function deleteTodo(event){ 
@@ -34,7 +35,7 @@ function deleteTodo(event){
   const deleteButton = event.target;
   const idToDelete = deleteButton.id;
 
-  todos.filter(function(todo){
+  todos = todos.filter(function(todo){
     /* If the id of this todo mathes  
        idToDelete, return false. 
        otherwise return true
@@ -45,6 +46,7 @@ function deleteTodo(event){
       return true;
     }
   });
+  render();
 }
 
 function render() {
@@ -66,3 +68,27 @@ function render() {
     todoList.appendChild(element);
   });
 }
+
+//   EXTRA CREDIT my additions 
+
+/****Add to do on clicking enter */
+
+// Get the input field
+
+const textbox = document.getElementById("todo-title");
+/* Execute a function when the user
+   presses a key */
+
+textbox.addEventListener('keypress',function(event){
+  /* If the user presses the "Enter" key
+  on the keyboard */
+  if (event.key === "Enter" && textbox.value != '') {
+    // Cancel normal behavior aka newline
+    event.preventDefault();
+    // Trigger the desired button
+    document.getElementById("addTodo").click();
+  }  
+});
+
+
+/***/
