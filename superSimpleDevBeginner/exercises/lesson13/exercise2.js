@@ -5,29 +5,25 @@
 - Write one that removes 2 apples and
   1 orange
 */
-const fruitBasket = ['cherry','apple','orange','apple','banana','apple'];
+
+// basket of fruit
+let fruitBasket = ['cherry','apple','orange','apple','banana','apple'];
+// things to remove from fruit basket
+const pickFruit = ['apple','apple']//,'orange']
 
 console.log(fruitBasket);
 
-const leftoverFruit = fruitBasket.filter(pickApples)
+//var leftoverFruit = fruitBasket.pop('apple')
+//fruitBasket.splice(fruitBasket.indexOf('apple'),1)
+//fruitBasket.splice(fruitBasket.indexOf('apple'),1)
 
-function pickApples(fruit){
-  let pickedFruit = 0
-  if(pickedFruit<2){
-    if (fruit != "apple"){
-      true;
-      console.log('true');
-      console.log(pickedFruit)
-     } else {
-      console.log('false');
-      false;
-      pickedFruit+=1;
-      console.log(pickedFruit)
-     }
-  } else {
+function pickApples() {
 
-  }
-  
+  pickFruit.forEach(item => {
+    fruitBasket.splice(fruitBasket.indexOf(item),1);
+  });
 }
 
-console.log(leftoverFruit)
+pickApples()
+//console.log(leftoverFruit)
+console.log(fruitBasket)
