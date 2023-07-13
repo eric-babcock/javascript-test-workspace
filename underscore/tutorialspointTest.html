@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Underscore.JS - Working Example</title>
+    <script type = "text/JavaScript" src = "https://underscorejs.org/underscore-min.js"></script>
+    <style>
+        div {
+            border: solid 1px #ccc;
+            padding:10px;
+            font-family: "Segoe UI",Arial,sans-serif;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<div style = "font-size:25px" id = "list">
+</div>
+<script type = "text/JavaScript">
+  var numbers = [1, 2, 3, 4];
+  var listOfNumbers = '';
+  _.each(numbers, function(x) { listOfNumbers += x + ' ' });
+  document.getElementById("list").innerHTML = listOfNumbers;
+</script>
+</body>
+</html>
