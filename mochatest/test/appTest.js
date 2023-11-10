@@ -1,29 +1,32 @@
 /* standard js assertion library
   const assert = require('assert').assert;
  */
-
 // We want Chai
+
+// Imports
 const assert = require('chai').assert;
-const sayHello = require('../app').sayHello;
-const addNumbers = require('../app').addNumbers;
+const {sayHello,addNumbers} = require("../app");
+//const {sayHello} = require("../app");
+
+// Results
+sayHelloResult = sayHello();
+addNumbersResult = addNumbers(5,5);
+
+//code
 describe('App', function(){
   it('function sayHello should return hello', function(){
-    let result = sayHello();
-    assert.equal(result,'hello');
+    assert.equal(sayHelloResult,'hello');
   });
 
   it('function sayHello should return type string', function (){
-    let result = sayHello();
-    assert.typeOf(result,'string');
+    assert.typeOf(sayHelloResult,'string');
   })
 
   it('addNumbers should be above 5', function(){
-    let result = addNumbers(5,5);
-    assert.isAbove(result,5);
+    assert.isAbove(addNumbersResult,5);
   })
 
   it('function addNumbers should return type number', function(){
-    let result = addNumbers(5,5);
-    assert.typeOf(result,'number')
+    assert.typeOf(addNumbersResult,'number')
   })
 });
