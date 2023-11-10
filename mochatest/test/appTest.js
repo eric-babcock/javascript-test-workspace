@@ -13,20 +13,23 @@ sayHelloResult = sayHello();
 addNumbersResult = addNumbers(5,5);
 
 //code
-describe('App', function(){
-  it('function sayHello should return hello', function(){
-    assert.equal(sayHelloResult,'hello');
-  });
+describe('The App function', function(){
+  describe('sayHello() should',function(){
+    it('return hello', function(){
+      assert.equal(sayHelloResult,'hello');
+    });
 
-  it('function sayHello should return type string', function (){
-    assert.typeOf(sayHelloResult,'string');
+    it('be of type string', function (){
+      assert.typeOf(sayHelloResult,'string');
+    })
   })
+  describe('addNumbers() should', function(){
+    it('be above 9', function(){
+      assert.isAbove(addNumbersResult,5);
+    })
 
-  it('addNumbers should be above 5', function(){
-    assert.isAbove(addNumbersResult,5);
-  })
-
-  it('function addNumbers should return type number', function(){
-    assert.typeOf(addNumbersResult,'number')
+    it('return type number', function(){
+      assert.typeOf(addNumbersResult,'number')
+    })
   })
 });
