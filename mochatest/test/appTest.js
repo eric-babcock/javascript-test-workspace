@@ -8,6 +8,7 @@ const sayHello = require('../app').sayHello;
 
 describe('App', function(){
   it('app should return hello', function(){
-    assert.equal(sayHello(),'hello');
+    let result = sayHello();
+    assert.equal(result,'hello');
   })
 })
