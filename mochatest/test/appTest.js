@@ -8,6 +8,6 @@ const app = require('../app');
 
 describe('App', function(){
   it('app should return hello', function(){
-    assert.equal(app(),'hello1');
+    assert.equal(app(),'hello');
   })
 })
