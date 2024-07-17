@@ -11,14 +11,18 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    const url="http://localhost:5173/api";
+    const url="localhost:5173/App";
     fetch(url)
     .then((result)=>result.json())
     .then((result) => {
       this.setState({userData:result});
     });
+    document.title=`value of count :${this.state.count}`;
   }
 
+  componentDidUpdate(){
+    document.title=`value of count :${this.state.count}`;
+  }
   addUser = (user) => {
     this.setState({userDate:[...this.state.userDate, user]})
   }
