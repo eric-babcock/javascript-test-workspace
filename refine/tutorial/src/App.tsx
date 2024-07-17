@@ -56,6 +56,7 @@ function App() {
               <UnsavedChangesNotifier />
               <DocumentTitleHandler />
             </Refine>
+            <p>hello world</p>
           </RefineSnackbarProvider>
         </ColorModeContextProvider>
       </RefineKbarProvider>

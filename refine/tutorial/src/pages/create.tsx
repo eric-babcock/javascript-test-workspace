@@ -19,7 +19,7 @@ interface IFormValue {
 	role: string;
 }
 
-cont defaultValues = {
+const defaultValues = {
 	firstname: "",
 	lastname: "",
 	address: "",
