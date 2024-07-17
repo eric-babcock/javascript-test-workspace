@@ -1,20 +1,25 @@
-import react, { useState } from 'react'
+import react, { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 export default function App() {
   const [count, setCount] = useState(0);
-  <div className='container'>
+
+  useEffect(()=>{
+    document.title = `value of count: ${count}`
+  })
+  return (
+    <div className='container'>
     <p>hello, world</p>
     <p>Count : {count}</p>
     <button
       onClick = {() => setCount(count +1)}
-      className='btn btn-primary'
     >
       Increment
     </button>
   </div>
+  );
 }
 
 /*class App extends React.Component {
