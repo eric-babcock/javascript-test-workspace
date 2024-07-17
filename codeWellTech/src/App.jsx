@@ -3,33 +3,50 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
+class App extends React.Component {
+  state = {
+    userData: []
+  }
+
+  componentDidMount = () => {
+    const url="http://localhost:5000/api";
+    fetch(url)
+    .then((result) => result.json())
+    .then((result) => {
+      this.setState({userData:result});
+    });
+  }
+
+  addUser = (user) => {
+    this.setState({userDate:[...this.state.userDate, user]})
+  }
+
+  removeUser = (index) => {
+    const { userData } = this.state;
+    const data = userData.filter((value, i) => {
+      return index !== i;
+    });
+    this.setState({ userData: data });
+  }
+
+  render() {
+    const { user } = this.state;
+    return (
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <div className="text-center border-bottom border-secondary p-3">
+          <h1>Users DashBoard</h1>
+        </div>
+        <div classname="container">
+          <CreateUser addUser={this.addUser} />
+          <UsersContainer
+            users={userData}
+            removeUser={this.removeUser}
+          />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    )
+  }
 }
 
 export default App
