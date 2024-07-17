@@ -3,8 +3,21 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+export default function App() {
+  const [count, setCount] = useState(0);
+  <div className='container'>
+    <p>hello, world</p>
+    <p>Count : {count}</p>
+    <button
+      onClick = {() => setCount(count +1)}
+      className='btn btn-primary'
+    >
+      Increment
+    </button>
+  </div>
+}
 
-class App extends React.Component {
+/*class App extends React.Component {
   state = {
     userData: [],
     count: 0
@@ -57,10 +70,12 @@ class App extends React.Component {
             users={userData}
             removeUser={this.removeUser}
           />
-        </div>*/}
+        </div>*\/}
       </div>
     )
   }
 }
 
 export default App;
+
+*/
