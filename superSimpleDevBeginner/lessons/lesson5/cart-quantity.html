@@ -7,28 +7,42 @@
   </head>
   <body>
     <button
-      onclick=""
+      onclick="showQuantity()"
     >
       Show Quantity
     </button>
     <button
-      onclick=""
+      onclick="handleAddToCart(1)"
     >
       Add to Cart
     </button>
-    <button>
+    <button
+    onclick="handleAddToCart(2)"
+    >
       +2
     </button>
-    <button>
+    <button
+    onclick="handleAddToCart(3)"  
+    >
       +3
     </button>
-    <button>
+    <button
+      onclick="handleReset()">
       Reset Cart
     </button>
     <script>
-      let cart_quantity = 0;
-      function handleAddToCart () {
-
+      let cartQuantity = 0;
+      function showQuantity() {
+        console.log(`Cart quantity: ${cartQuantity}`);
+      }
+      function handleAddToCart (value) {
+        cartQuantity +=value;
+        showQuantity();
+      }
+      function handleReset() {
+        cartQuantity=0;
+        console.log('Cart was reset')
+        showQuantity();
       }
     </script>
   </body>
