@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercises</title>
+  </head>
+  <body>
+    <script>
+      const menu = {
+        coffee: 5,
+        bagel: 3,
+        soup: 9,
+      }
+      let cost = 0;
+      let tax = 0;
+
+      cost = menu.coffee + (2*menu.bagel) + menu.soup;
+      tax = cost*.1;
+
+      console.log(`Cost of food: ${cost}`);
+      console.log(`Tax (10%): $${tax}`);
+      console.log(`Total cost: $${cost+tax}`);
+
+    </script>
+  </body>
+</html>
