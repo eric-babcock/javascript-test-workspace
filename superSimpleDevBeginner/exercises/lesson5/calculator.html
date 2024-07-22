@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div>
+      <button
+        onclick="handleAddToCalc(1)";
+      >
+        1
+      </button>
+      <button
+        onclick="handleAddToCalc(2)"
+      >
+        2
+      </button>
+      <button onclick="handleAddToCalc(3)">
+        3
+      </button>
+      <button
+        onclick="setOperation('+')"
+      >
+        +
+      </button>  
+    </div>
+    <button
+      onclick="setOperation('-')"
+    >
+      -
+    </button>
+    <button
+    onclick="handleCalculation()">
+      =
+    </button>
+    <script>
+      let calc = '';
+      let queuedCalc = '';
+      let queuedOperation = '';
+
+      function handleAddToCalc (val) {
+        calc = calc + val;
+        console.log(calc);
+      }
+      function setOperation (operation) {
+        if (queuedCalc === '') {
+          queuedCalc = calc;
+          queuedOperation = operation;
+          calc = '';
+          console.log(`queued operation: ${queuedCalc} ${queuedOperation} ${calc}`)
+        } else {
+          queuedOperation = operation;
+          console.log(`queued operation: ${queuedCalc} ${queuedOperation} ${calc}`)
+        }
+      }
+      function handleCalculation() {
+        total = 0;
+        queuedCalc = Number(queuedCalc);
+        calc = Number(calc);
+        switch (queuedOperation) {
+          case "+":
+            total = queuedCalc+calc;
+            break;
+          case "-":
+            total = queuedCalc-calc;
+            break;
+        }
+        queuedCalc = total;
+        calc = '';
+        console.log(total);
+
+      }
+    </script>
+  </body>
+</html>
