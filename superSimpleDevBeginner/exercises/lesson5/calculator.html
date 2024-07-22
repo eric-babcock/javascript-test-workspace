@@ -19,55 +19,91 @@
         3
       </button>
       <button
-        onclick="setOperation('+')"
+        onclick="handleAddToCalc('+')"
       >
         +
       </button>  
     </div>
-    <button
-      onclick="setOperation('-')"
+    <div>
+      <button
+        onclick="handleAddToCalc(4)"
+      >
+        4
+      </button>
+      <button
+        onclick="handleAddToCalc(5)"
+      >
+        5
+      </button>
+      <button
+        onclick="handleAddToCalc(6)"
+      >
+        6
+      </button>
+      <button
+      onclick="handleAddToCalc('-')"
     >
       -
     </button>
-    <button
-    onclick="handleCalculation()">
-      =
-    </button>
+    </div>
+    <div>
+      <button
+        onclick="handleAddToCalc(7)"
+      >
+        7
+      </button>
+      <button
+        onclick="handleAddToCalc(8)"
+      >
+        8
+      </button>
+      <button
+        onclick="handleAddToCalc(9)"
+      >
+        9
+      </button>
+      <button
+        onclick="handleAddToCalc('*')"
+      >
+        *
+      </button>
+    </div>
+    <div>
+      <button
+        onclick="handleAddToCalc(0)"
+      >
+        0
+      </button>
+      <button
+        onclick="handleAddToCalc('.')"
+        
+      >
+        .
+      </button>
+      <button
+        onclick="handleCalculation('=')"
+      >
+        =
+      </button>
+      <button
+      onclick="handleAddToCalc('/')">
+        /
+      </button>
+    </div>
     <script>
-      let calc = '';
+      let calculation = '';
       let queuedCalc = '';
-      let queuedOperation = '';
 
       function handleAddToCalc (val) {
-        calc = calc + val;
-        console.log(calc);
+        calculation += val;
+        console.log(calculation);
+        // Add error evaluation for . 
+        // if (calculation.count('.')<2 && !> calculation.count('+'||'-'||'*'||'/'))
       }
-      function setOperation (operation) {
-        if (queuedCalc === '') {
-          queuedCalc = calc;
-          queuedOperation = operation;
-          calc = '';
-          console.log(`queued operation: ${queuedCalc} ${queuedOperation} ${calc}`)
-        } else {
-          queuedOperation = operation;
-          console.log(`queued operation: ${queuedCalc} ${queuedOperation} ${calc}`)
-        }
-      }
+
       function handleCalculation() {
-        total = 0;
-        queuedCalc = Number(queuedCalc);
-        calc = Number(calc);
-        switch (queuedOperation) {
-          case "+":
-            total = queuedCalc+calc;
-            break;
-          case "-":
-            total = queuedCalc-calc;
-            break;
-        }
-        queuedCalc = total;
-        calc = '';
-        console.log(total);
+        calculation = eval(calculation)
+        console.log(calculation);
 
       }
     </script>
