@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-function Todos() {
-  return(
-    <>
-      <h1>Hello, world!</h1>
-    </>
+function Todo(props) {
+  return (
+    <div>
+      {props.todo.message}
+    </div>
   )
 }
 
-export default Todos;
+export default Todo;
