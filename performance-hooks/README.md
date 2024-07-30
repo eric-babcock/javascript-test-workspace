@@ -1,3 +1,24 @@
+# A practical callback 
+
+As HTML pages grow in size and complexity, creating efficient React code becomes more important than ever. Re-rendering large components is costly, and providing a significant amount of work for the browser through a single-page application (SPA) increases processing time and can potentially drive away users. React offers inbuilt API features to improve app performance by avoiding unnecessary re-renders, caching repetitive costly operations, lazy-loading components, etc.
+
+This tutorial examines two different React Hooks, useMemo and useCallback. These Hooks help developers improve the rendering performance of components, preserve objects between React component renderings, and help improve application performance.
+
+## React performance optimizations for functions
+
+React already provides React.memo() to avoid recreating DOM elements when props are not changed. This method is a higher-order component (HOC) that memoizes the last result. But, it doesn’t memoize typical JavaScript functions. Therefore, despite being a first-class citizen in JavaScript, functions may potentially be recreated with every use.
+
+The useMemo and useCallback methods help to avoid recreating or rerunning functions in certain situations. Although not always useful, useMemo or useCallback may create a noticeable difference when dealing with large amounts of data or many components that share behavior. For example, this would be especially useful when you’re creating a stock or digital currency trading platform.
+
+## What is useCallback?
+
+When React re-renders a component, function references inside the component get re-created. If you pass a callback function to a memoized (with React.memo) child component via props, it may get re-rendered even if the parent component doesn’t apparently change the child component’s props. Each parent component re-rendering phase creates new function references for callbacks, so inequal callback props can trigger an unwanted child component re-render silently even visible props don’t get changed.
+
+The useCallback React Hook returns a memoized function reference based on a function and dependencies array. So, we can use it to create optimized callbacks that don’t cause unwanted re-renders. This Hook returns a cached (memoized) function reference if dependencies aren’t changed.
+
+
+[Source](https://blog.logrocket.com/react-usememo-vs-usecallback/#react-performance-optimizations-functions)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
