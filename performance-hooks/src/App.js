@@ -1,8 +1,9 @@
-import { useState,useCallback } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 // example
 import logo from './logo.svg';
 import './App.css';
 import Numbers from './components/Numbers/Numbers';
+import calculateMagicNumber from './helpers/calculateMagicNumber';
 
 function App() {
   const [nums, setNums] = useState([]);
@@ -16,7 +17,7 @@ function App() {
     let randNum = parseInt(Math.random() * 1000, 10);
     setNums([...nums, randNum]);
   },[nums]);
-  const magicNum = calculateMagicNumber(count);
+  const magicNum = useMemo(() => calculateMagicNumber(count),[count]);
 
   return (
     <div className="App">
