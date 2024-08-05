@@ -1,9 +1,11 @@
 import React from 'react'
 
-function Todo(props) {
+function Todo({ todo, onDelete, onUpdate }) {
   return (
     <div>
-      {props.todo.message}
+      {todo.message}
+      <button onClick={() => onUpdate()}>Edit</button>
+      <button onClick={() => onDelete(todo.id)}>X</button>
     </div>
   )
 }

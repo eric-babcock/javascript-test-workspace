@@ -10,13 +10,28 @@ const initialState = [
 
 function Todos() {
   const [todoList, setTodoList] = useState(initialState);
-  console.log('app.js',todoList)
+  const handleDelete = id => {
+    const newTodos = todoList.filter(item => {
+      // return all items (item) in todoList that were'nt marked for deletion
+      return item.id !== id
+    })
+    setTodoList(newTodos);
+  }
+  const handleUpdate = () => {
+    //update logic
+  }
+
   return(
     <>
       <TodoForm
-      todos = {todoList}
-      setTodos = {setTodoList}/>
-      <TodoList todos={todoList}/>
+        todos={todoList}
+        setTodos={setTodoList}
+      />
+      <TodoList
+        todos={todoList}
+        onDelete={handleDelete}
+        onUpdate={handleUpdate}
+      />
     </>
   )
 } 
