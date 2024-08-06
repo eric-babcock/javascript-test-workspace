@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-function TodoList({ todos, onDelete,onUpdate }) {
+function TodoList({ todos, onDelete, onUpdate }) {
   return (
     <>
       {todos.map( todo => {

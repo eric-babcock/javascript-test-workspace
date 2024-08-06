@@ -30,7 +30,6 @@ function TodoForm({ todos, setTodos }) {
       />
       <button
         type='submit'
-        
       >
         Add Todo
       </button>
