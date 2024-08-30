@@ -1,0 +1,10 @@
+const constants = { 
+  MOZARRELA:"MOZZARELA",
+  CHEDDAR: "CHEDDAR",
+  PARMESAN: "PARMESAN",
+  CABERNET: "CABERNET",
+  CHARDONAY: "CHARDONAY",
+  MERLOT: "MERLOT",
+}
+
+export {constants}
