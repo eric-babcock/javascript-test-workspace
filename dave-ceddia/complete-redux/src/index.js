@@ -1,19 +1,51 @@
 import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createStore } from 'redux';
-import Counter  from './components/Counter'
+import App from './App'
 
-function reducer(state,action) {
+const initialState = {
+  count: 0
+};
+
+function reducer(state = initialState, action) {
   console.log('reducer', state, action);
-  return state;
+
+  switch(action.type) {
+    case 'INCREMENT':
+      return {
+        count: state.count + 1
+      };
+    case 'DECREMENT':
+      return {
+        count: state.count - 1
+      };
+    case 'RESET':
+      return {
+        count: 0
+      };
+    default:
+      return state;
+  }
 }
 
+
 const store = createStore(reducer);
+store.dispatch({ type: "INCREMENT" });
+store.dispatch({ type: "INCREMENT" });
+store.dispatch({ type: "DECREMENT" });
+store.dispatch({ type: "RESET" });
 
 
-const App = () => (
-  <>
-    <Counter/>
-  </>
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Provider store = {store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 )
+
+/*NOTE: You can't ``Get around'' const root and a render function.  */
