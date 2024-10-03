@@ -5,6 +5,8 @@ export default function SxProp() {
       <h1>
         The sx prop
       </h1>
+
+      <SxBasicExample />
     </>
   )
 }
