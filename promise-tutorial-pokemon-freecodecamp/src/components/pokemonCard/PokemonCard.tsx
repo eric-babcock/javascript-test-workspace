@@ -1,6 +1,6 @@
 const PokemonCard = () => {
   
-  return(<h1>pokemon</h1>)
+  return(<p>pokemon</p>)
 }
 
 export default PokemonCard;

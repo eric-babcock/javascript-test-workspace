@@ -1,4 +1,4 @@
-import getPromise from "./getPromise";
+import getPromise from "../../helpers/getPromise";
 
 const POKEMONS_URL = 'https://pokeapi.co/api/v2/pokemon?limit=50';
 const POKEMONS_BAD_URL = 'https://pokeapi.co/api/v2/pokemon-bad';
