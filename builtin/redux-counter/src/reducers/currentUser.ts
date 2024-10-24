@@ -1,0 +1,22 @@
+import { AllActionsTypes, SetUserAction } from "../types"
+
+const currentUser = (state = {}, action:AllActionsTypes) => {
+  switch(action.type){
+    case "SET_USER":
+      return {
+        ...state,
+        user: (action as SetUserAction).payload,
+        loggedIn: true
+      }
+    case "LOG_OUT":
+      return {
+        ...state,
+        user: {},
+        loggedIn: false
+      }
+    default:
+      return state
+  }
+}
+
+export default currentUser;
